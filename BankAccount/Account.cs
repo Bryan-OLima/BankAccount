@@ -15,10 +15,9 @@ namespace BankAccount {
   
         //constructors
         private Account() {
-            Balance = 0;
         }
 
-        public Account(string name, int accountNumber) : this() {
+        public  Account(string name, int accountNumber) : this() {
             _name = name;
             AccountNumber = accountNumber;
         }
@@ -27,7 +26,7 @@ namespace BankAccount {
             Balance = initialDeposit;
         }
 
-        //properties
+        //custom properties
         public string Name {
             get { return _name; }
             set { 
@@ -43,12 +42,11 @@ namespace BankAccount {
             Balance += deposit;
         }
 
-        public double WithDraw(double withdraw) {
-
-            return (Balance - withdraw) - tax;
+        public void WithDraw(double withdraw) {
+            if(withdraw != null || withdraw > 0) {
+                Balance = (Balance - tax) - withdraw; 
+            }
         }
-
-        //ToString
 
         public override string ToString() {
             return $"Account {AccountNumber}, Owner: {_name}, Balance: ${Balance} ";

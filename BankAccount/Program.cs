@@ -37,6 +37,8 @@ if(yOrN == 'y' || yOrN == 'Y') {
     hasInitialDeposit = true;
 }
 
+Console.WriteLine();
+
 if (hasInitialDeposit) {
     Console.Write("Type Initial value: ");
     accountAmountValue = double.Parse(Console.ReadLine());
@@ -45,21 +47,22 @@ if (hasInitialDeposit) {
     account = new(accountName, accountNumber);
 }
 
+Console.WriteLine();
 Console.WriteLine("Account's Data:");
 Console.Write(account);
 
+Console.WriteLine();
 Console.Write("Type a value to deposit: ");
 accountAmountValue = double.Parse(Console.ReadLine());
 account.Deposit(accountAmountValue);
 
+Console.WriteLine();
 Console.WriteLine("Updated Account's Data: ");
 Console.WriteLine(account);
 
 Console.Write("Type a value to withdraw: ");
 accountAmountValue = double.Parse(Console.ReadLine());
-if(accountAmountValue != null || accountAmountValue > 0) {
-    account.WithDraw(accountAmountValue);
-}
+account.WithDraw(accountAmountValue);
 
 Console.WriteLine("Updated Account's Data: ");
 Console.WriteLine(account);
@@ -78,3 +81,17 @@ Console.WriteLine(account);
 //Entre um valor para saque: 300.00
 //Dados da conta atualizados:
 //Conta 8532, Titular: Alex Green, Saldo: $ 395.00
+
+//ex2
+
+//Entre o número da conta: 7801
+//Entre o titular da conta: Maria Brown
+//Haverá depósito inicial (s/n)? n
+//Dados da conta:
+//Conta 7801, Titular: Maria Brown, Saldo: $ 0.00
+//Entre um valor para depósito: 200.00
+//Dados da conta atualizados:
+//Conta 7801, Titular: Maria Brown, Saldo: $ 200.00
+//Entre um valor para saque: 198.00
+//Dados da conta atualizados:
+//Conta 7801, Titular: Maria Brown, Saldo: $ -3.00
